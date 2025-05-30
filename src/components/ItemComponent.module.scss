@@ -8,21 +8,35 @@
     .logo {
         font-size: 50px;
     }
+
     .knowledgeSpaces {
         display: flex;
-        justify-content: center ;
+        justify-content: center;
 
         .knowledgeSpace {
             width: 20px;
             height: 5px;
             border: 1px solid #000;
             background-color: #fff;
+            opacity: .2;
 
         }
 
         .acquired {
             background-color: #196495;
+            opacity: 1;
+        }
+    }
 
+    .ranks {
+        display: flex;
+        width: 180px;
+        justify-content: space-around;
+
+        p{
+            color: #fff;
+            font-size: 16px;
+            margin-top: .3rem;
         }
     }
 

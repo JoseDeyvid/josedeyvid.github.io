@@ -1,8 +1,18 @@
 .category {
     display: flex;
     gap: .3rem;
+    background-color: var(--blue-color);
+    padding: .2rem .5rem;
+    border-radius: 12px;
+    justify-content: space-between;
+    align-items: center;
 
     p {
         color: #000;
+    }
+
+    input {
+        width: 15px;
+        height: 15px;
     }
 }

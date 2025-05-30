@@ -26,6 +26,11 @@ const ItemComponent = ({ item }: Props) => {
             <div className={styles.knowledgeSpaces}>
                 {showKnowledgeSpace(item.knowledge)}
             </div>
+            <div className={styles.ranks}>
+                <p>Jr</p>
+                <p>Pl</p>
+                <p>Sr</p>
+            </div>
         </div>
     )
 }
