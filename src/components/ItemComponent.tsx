@@ -7,7 +7,7 @@ type Props = {
 }
 
 const ItemComponent = ({ item }: Props) => {
-    const showKnowledge = (knowledge: number) => {
+    const showKnowledgeSpace = (knowledge: number) => {
         const array = [];
         for (let index = 0; index < 9; index++) {
             if (index < knowledge) {
@@ -19,11 +19,13 @@ const ItemComponent = ({ item }: Props) => {
         return array;
     }
     return (
-        <div>
+        <div className={styles.itemContainer}>
             <h4>{item.name}</h4>
-            <img src={item.urlImg} alt={item.description} />
+            <i className={`${item.logoName} ${styles.logo}`}></i>
             <p>{item.knowledge === 0 ? "Not Acquired" : item.knowledge < 7 ? "Learning" : "Acquired"}</p>
-            {showKnowledge(item.knowledge)}
+            <div className={styles.knowledgeSpaces}>
+                {showKnowledgeSpace(item.knowledge)}
+            </div>
         </div>
     )
 }

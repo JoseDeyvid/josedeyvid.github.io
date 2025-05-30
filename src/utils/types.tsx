@@ -1,7 +1,6 @@
 export type Item = {
     id: string,
     name: string,
-    urlImg: string,
+    logoName: string,
     knowledge: number,
-    description: string,
 }
