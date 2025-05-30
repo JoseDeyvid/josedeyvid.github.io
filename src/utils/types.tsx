@@ -4,3 +4,9 @@ export type Item = {
     logoName: string,
     knowledge: number,
 }
+
+export type Category = {
+    id: string,
+    name: string,
+    selected: boolean
+}

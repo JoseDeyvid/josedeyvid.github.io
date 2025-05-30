@@ -4,6 +4,7 @@ import type { Item } from '../utils/types';
 import ItemComponent from '../components/ItemComponent';
 import SearchBar from '../components/SearchBar';
 import OrderBy from '../components/OrderBy';
+import Sidebar from '../components/Sidebar';
 
 
 const Knowledge = () => {
@@ -23,10 +24,13 @@ const Knowledge = () => {
                 <SearchBar />
                 <OrderBy />
             </div>
-            <div className={styles.itemsContainer}>
-                {items.map((item) => (
-                    <ItemComponent key={item.id} item={item} />
-                ))}
+            <div className={styles.mainContent}>
+                <Sidebar />
+                <div className={styles.itemsContainer}>
+                    {items.map((item) => (
+                        <ItemComponent key={item.id} item={item} />
+                    ))}
+                </div>
             </div>
         </div>
     )

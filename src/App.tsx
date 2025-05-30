@@ -8,7 +8,7 @@ import Header from './components/Header';
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+    <Header/>
       <Routes>
         <Route element={<Knowledge />} path='/portfolio' />
         <Route element={<Certifications />} path='/portfolio/certifications' />
