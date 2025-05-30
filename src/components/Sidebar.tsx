@@ -1,21 +1,23 @@
 import React from 'react'
 import styles from './Sidebar.module.scss'
 import type { Category } from '../utils/types'
-import { v4 as uuidv4 } from 'uuid'
 import CategoryComponent from './CategoryComponent'
 
 const Sidebar = () => {
     const categories: Category[] = [
-        { id: uuidv4(), name: "Category 1", selected: false },
-        { id: uuidv4(), name: "Category 2", selected: false },
-        { id: uuidv4(), name: "Category 3", selected: false },
-        { id: uuidv4(), name: "Category 4", selected: true },
-        { id: uuidv4(), name: "Category 5", selected: false },
-        { id: uuidv4(), name: "Category 6", selected: true },
-        { id: uuidv4(), name: "Category 7", selected: false },
-        { id: uuidv4(), name: "Category 8", selected: false },
-        { id: uuidv4(), name: "Category 9", selected: false },
-        { id: uuidv4(), name: "Category 10", selected: false },
+        { id: "0", name: "Nuvem", selected: false },
+        { id: "1", name: "Bibliotecas", selected: false },
+        { id: "2", name: "Ferramentas", selected: false },
+        { id: "3", name: "Versionamento", selected: true },
+        { id: "4", name: "CSS", selected: false },
+        { id: "5", name: "Backend", selected: true },
+        { id: "6", name: "Frontend", selected: false },
+        { id: "7", name: "Mobile", selected: false },
+        { id: "8", name: "Banco de dados", selected: false },
+        { id: "9", name: "APIs", selected: false },
+        { id: "10", name: "Testes", selected: false },
+        { id: "11", name: "ORMs", selected: false },
+        { id: "12", name: "Linguagens", selected: false },
     ]
     return (
         <div className={styles.sidebarContainer}>

@@ -18,11 +18,37 @@ const ItemComponent = ({ item }: Props) => {
         }
         return array;
     }
+
+    const defineKnowledgeLabel = (knowledge: number) => {
+
+        switch (knowledge) {
+            case 1:
+                return 'Aprendiz'
+            case 2:
+                return 'Iniciante'
+            case 3:
+                return 'Iniciante Avançado'
+            case 4:
+                return 'Intermediário Básico'
+            case 5:
+                return 'Intermediário'
+            case 6:
+                return 'Intermediário Avançado'
+            case 7:
+                return 'Avançado'
+            case 8:
+                return 'Especialista'
+            case 9:
+                return 'Referência'
+
+        }
+    }
+
     return (
         <div className={styles.itemContainer}>
             <h4>{item.name}</h4>
             {item.logoName ? <i className={`${item.logoName} ${styles.logo}`}></i> : <img src={item.urlImg} alt={`${item.name} logo`} className={styles.logo} />}
-            <p>{item.knowledge === 0 ? "Not Acquired" : item.knowledge < 7 ? "Learning" : "Acquired"}</p>
+            <label>{defineKnowledgeLabel(item.knowledge)}</label>
             <div className={styles.knowledgeSpaces}>
                 {showKnowledgeSpace(item.knowledge)}
             </div>
