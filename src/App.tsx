@@ -3,6 +3,7 @@ import styles from './App.module.scss'
 import type { Item } from './utils/types'
 import ItemComponent from './components/ItemComponent';
 import SearchBar from './components/SearchBar';
+import OrderBy from './components/OrderBy';
 
 
 function App() {
@@ -18,7 +19,10 @@ function App() {
   ]
   return (
     <div className={styles.container}>
-      <SearchBar />
+      <div className={styles.topFilters}>
+        <SearchBar />
+        <OrderBy/>
+      </div>
       <div className={styles.itemsContainer}>
         {items.map((item) => (
           <ItemComponent key={item.id} item={item} />
