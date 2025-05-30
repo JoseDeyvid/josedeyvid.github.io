@@ -63,9 +63,14 @@ const Knowledge = () => {
             <div className={styles.mainContent}>
                 <Sidebar />
                 <div className={styles.itemsContainer}>
-                    {filteredItems.map((item) => (
+                    {filteredItems.length ? filteredItems.map((item) => (
                         <ItemComponent key={item.id} item={item} />
-                    ))}
+                    )) :
+                        <div className={styles.noFoundItems}>
+                            <h3>Não há itens correspondentes a sua busca</h3>
+                            <p>Reveja sua barra de pesquisa ou os filtros selecionados...</p>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
