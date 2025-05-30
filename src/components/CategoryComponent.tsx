@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Category } from '../utils/types'
 import styles from './Category.module.scss'
 

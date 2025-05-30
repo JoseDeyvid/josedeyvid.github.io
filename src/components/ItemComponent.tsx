@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Item } from '../utils/types'
 import styles from './ItemComponent.module.scss'
 

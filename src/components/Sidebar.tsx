@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Sidebar.module.scss'
 import type { Category } from '../utils/types'
 import CategoryComponent from './CategoryComponent'
