@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './App.module.scss'
 import type { Item } from './utils/types'
 import ItemComponent from './components/ItemComponent';
+import SearchBar from './components/SearchBar';
 
 
 function App() {
@@ -17,9 +18,13 @@ function App() {
   ]
   return (
     <div className={styles.container}>
-      {items.map((item) => (
-        <ItemComponent key={item.id} item={item} />
-      ))}
+      <SearchBar />
+      <div className={styles.itemsContainer}>
+        {items.map((item) => (
+          <ItemComponent key={item.id} item={item} />
+        ))}
+      </div>
+
     </div>
 
   )
