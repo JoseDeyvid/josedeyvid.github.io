@@ -21,7 +21,7 @@ const ItemComponent = ({ item }: Props) => {
     return (
         <div className={styles.itemContainer}>
             <h4>{item.name}</h4>
-            <i className={`${item.logoName} ${styles.logo}`}></i>
+            {item.logoName ? <i className={`${item.logoName} ${styles.logo}`}></i> : <img src={item.urlImg} alt={`${item.name} logo`} className={styles.logo} />}
             <p>{item.knowledge === 0 ? "Not Acquired" : item.knowledge < 7 ? "Learning" : "Acquired"}</p>
             <div className={styles.knowledgeSpaces}>
                 {showKnowledgeSpace(item.knowledge)}
