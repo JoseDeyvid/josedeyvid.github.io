@@ -22,7 +22,7 @@ const Sidebar = () => {
     return (
         <div className={styles.sidebarContainer}>
             {categories.map((category) => (
-                <CategoryComponent category={category} />
+                <CategoryComponent key={category.id} category={category} />
             ))}
         </div>
     )

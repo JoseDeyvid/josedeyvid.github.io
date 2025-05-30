@@ -5,10 +5,11 @@ import ItemComponent from '../components/ItemComponent';
 import SearchBar from '../components/SearchBar';
 import OrderBy from '../components/OrderBy';
 import Sidebar from '../components/Sidebar';
+import { useState } from 'react';
 
 
 const Knowledge = () => {
-    const items: Item[] = [
+    const [items, setItems] = useState<Item[]>([
         { id: uuidv4(), knowledge: 1, name: "Amazon Web Services", logoName: "devicon-amazonwebservices-plain-wordmark" },
         { id: uuidv4(), knowledge: 5, name: "Axios", logoName: "devicon-axios-plain" },
         { id: uuidv4(), knowledge: 2, name: "Babel", logoName: "devicon-babel-plain" },
@@ -50,12 +51,12 @@ const Knowledge = () => {
         { id: uuidv4(), knowledge: 4, name: "Tailwind CSS", logoName: "devicon-tailwindcss-original" },
         { id: uuidv4(), knowledge: 6, name: "TypeScript", logoName: "devicon-typescript-plain" },
         { id: uuidv4(), knowledge: 4, name: "ViteJS", logoName: "devicon-vitejs-plain" },
-    ]
+    ])
     return (
         <div className={styles.container}>
             <div className={styles.topFilters}>
                 <SearchBar />
-                <OrderBy />
+                <OrderBy setItems={setItems} />
             </div>
             <div className={styles.mainContent}>
                 <Sidebar />
