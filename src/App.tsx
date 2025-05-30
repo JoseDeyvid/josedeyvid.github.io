@@ -1,34 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { v4 as uuidv4 } from 'uuid';
 import './App.css'
+import type { Item } from './utils/types'
+import ItemComponent from './components/ItemComponent';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const items: Item[] = [
+    { id: uuidv4(), knowledge: 7, name: "testName", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 4, name: "testName2", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 5, name: "testName3", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 0, name: "testName4", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 2, name: "testName5", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 7, name: "testName6", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 9, name: "testName7", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+    { id: uuidv4(), knowledge: 8, name: "testName8", urlImg: "https://logospng.org/wp-content/uploads/node-js.png", description: "Any description about framework" },
+  ]
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ItemComponent item={items[2]} />
   )
 }
 
