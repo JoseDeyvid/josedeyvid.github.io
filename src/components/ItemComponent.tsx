@@ -11,9 +11,9 @@ const ItemComponent = ({ item }: Props) => {
         const array = [];
         for (let index = 0; index < 9; index++) {
             if (index < knowledge) {
-                array.push(<div className={`${styles.knowledgeSpace} ${styles.acquired}`}></div>)
+                array.push(<div key={index} className={`${styles.knowledgeSpace} ${styles.acquired}`}></div>)
             } else {
-                array.push(<div className={styles.knowledgeSpace}></div>)
+                array.push(<div key={index} className={styles.knowledgeSpace}></div>)
             }
         }
         return array;
