@@ -52,16 +52,18 @@ const Knowledge = () => {
         { id: uuidv4(), knowledge: 6, name: "TypeScript", logoName: "devicon-typescript-plain" },
         { id: uuidv4(), knowledge: 4, name: "ViteJS", logoName: "devicon-vitejs-plain" },
     ])
+    const [searchTxt, setSearchTxt] = useState('');
+    const filteredItems = items.filter(item => item.name.toLocaleLowerCase().includes(searchTxt.toLowerCase()))
     return (
         <div className={styles.container}>
             <div className={styles.topFilters}>
-                <SearchBar />
+                <SearchBar searchTxt={searchTxt} setSearchTxt={setSearchTxt} />
                 <OrderBy setItems={setItems} />
             </div>
             <div className={styles.mainContent}>
                 <Sidebar />
                 <div className={styles.itemsContainer}>
-                    {items.map((item) => (
+                    {filteredItems.map((item) => (
                         <ItemComponent key={item.id} item={item} />
                     ))}
                 </div>

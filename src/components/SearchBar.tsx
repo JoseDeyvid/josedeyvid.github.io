@@ -1,7 +1,12 @@
 import styles from './SearchBar.module.scss';
 import { useState } from 'react';
 
-const SearchBar = () => {
+type Props = {
+    searchTxt: string,
+    setSearchTxt: React.Dispatch<React.SetStateAction<string>>
+}
+
+const SearchBar = ({ searchTxt, setSearchTxt }: Props) => {
     const [isFocused, setIsFocused] = useState(false);
     return (
         <div className={`${styles.inputWrapper} ${isFocused ? styles.focused : ''}`}>
@@ -27,6 +32,8 @@ const SearchBar = () => {
                 className={styles.input}
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
+                value={searchTxt}
+                onChange={(e) => setSearchTxt(e.target.value)}
             />
         </div>
     );
