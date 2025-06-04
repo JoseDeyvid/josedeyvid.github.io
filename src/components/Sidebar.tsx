@@ -20,7 +20,7 @@ const Sidebar = () => {
     ]
 
     return (
-        <aside className="w-48 bg-white border border-gray-200  rounded-lg p-4 shadow-2xl">
+        <aside className="w-48 h-fit bg-white border border-gray-200  rounded-lg p-4 shadow-2xl sticky top-4">
             <h2 className="text-lg font-semibold mb-4 text-gray-700">Categorias</h2>
             <div className="flex flex-col gap-2">
                 {categories.map((category) => (

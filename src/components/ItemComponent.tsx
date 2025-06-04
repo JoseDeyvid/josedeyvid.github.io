@@ -48,7 +48,7 @@ const ItemComponent = ({ item, toggleSelectedItem }: Props) => {
         <div
             // className={`cursor-pointer flex w-60 h-46 flex-col items-center gap-2 border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition
             // ${item.isSelected ? 'border-blue-900 shadow-inner ring-2 ring-blue-700 scale-[0.98]' : 'border-gray-200'}`}
-            className={`cursor-pointer border flex w-60 h-46 flex-col items-center gap-2 rounded-xl p-4 transition
+            className={`cursor-pointer border flex w-60 h-46 flex-col items-center gap-2 rounded-xl p-4 transition hover:bg-blue-100
         ${item.isSelected
                     ? ' border-3 border-blue-400 ring-5 ring-black-500 bg-blue-100 shadow-inner scale-[0.98]'
                     : 'ring-5 ring-black-500 bg-white shadow-sm hover:shadow-md'
