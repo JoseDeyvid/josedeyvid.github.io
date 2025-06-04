@@ -4,6 +4,7 @@ export type Item = {
     logoName?: string,
     urlImg?: string,
     knowledge: number,
+    isSelected: boolean
 }
 
 export type Category = {

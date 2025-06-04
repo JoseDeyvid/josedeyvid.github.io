@@ -2,10 +2,11 @@ import type { Item } from '../utils/types'
 // import styles from './ItemComponent.module.scss'
 
 type Props = {
-    item: Item
+    item: Item,
+    toggleSelectedItem: (id: string) => void,
 }
 
-const ItemComponent = ({ item }: Props) => {
+const ItemComponent = ({ item, toggleSelectedItem }: Props) => {
     const showKnowledgeSpace = (knowledge: number) => {
         const array = [];
         for (let index = 0; index < 9; index++) {
@@ -44,8 +45,16 @@ const ItemComponent = ({ item }: Props) => {
     }
 
     return (
-        <div className="flex w-60 h-46 flex-col items-center gap-2 border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition">
-            <h4 className="font-semibold text-gray-800">{item.name}</h4>
+        <div
+            // className={`cursor-pointer flex w-60 h-46 flex-col items-center gap-2 border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition
+            // ${item.isSelected ? 'border-blue-900 shadow-inner ring-2 ring-blue-700 scale-[0.98]' : 'border-gray-200'}`}
+            className={`cursor-pointer border flex w-60 h-46 flex-col items-center gap-2 rounded-xl p-4 transition
+        ${item.isSelected
+                    ? ' border-3 border-blue-400 ring-5 ring-black-500 bg-blue-100 shadow-inner scale-[0.98]'
+                    : 'ring-5 ring-black-500 bg-white shadow-sm hover:shadow-md'
+                }`}
+            onClick={() => toggleSelectedItem(item.id)}>
+            <h4 className="font-semibold text-gray-800 text-lg">{item.name}</h4>
             {item.logoName ? (
                 <i className={`${item.logoName} text-5xl text-black`} />
             ) : (

@@ -11,7 +11,7 @@ const SearchBar = ({ searchTxt, setSearchTxt }: Props) => {
 
     return (
         <div
-            className={`flex items-center gap-2 px-4 py-2 border transition-all duration-600 ease-in-out  ${isFocused ? "border-2 border-blue-700 shadow-2xl w-[400px]" : "border-2    border-gray-100 w-[200px]"
+            className={`flex items-center gap-2 px-4 py-2 border transition-all duration-600 ease-in-out bg-gray-100  ${isFocused ? "border-2 border-blue-700 shadow-2xl w-[400px]" : "border-2    border-gray-300 w-[200px]"
                 } rounded-lg transition`}
         >
             <svg
