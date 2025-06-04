@@ -1,4 +1,4 @@
-import styles from './Sidebar.module.scss'
+// import styles from './Sidebar.module.scss'
 import type { Category } from '../utils/types'
 import CategoryComponent from './CategoryComponent'
 
@@ -18,13 +18,17 @@ const Sidebar = () => {
         { id: "11", name: "ORMs", selected: false },
         { id: "12", name: "Linguagens", selected: false },
     ]
+
     return (
-        <div className={styles.sidebarContainer}>
-            {categories.map((category) => (
-                <CategoryComponent key={category.id} category={category} />
-            ))}
-        </div>
-    )
+        <aside className="w-48 bg-white border border-gray-200  rounded-lg p-4 shadow-2xl">
+            <h2 className="text-lg font-semibold mb-4 text-gray-700">Categorias</h2>
+            <div className="flex flex-col gap-2">
+                {categories.map((category) => (
+                    <CategoryComponent key={category.id} category={category} />
+                ))}
+            </div>
+        </aside>
+    );
 }
 
 export default Sidebar

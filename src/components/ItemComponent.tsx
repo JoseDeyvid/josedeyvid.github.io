@@ -1,5 +1,5 @@
 import type { Item } from '../utils/types'
-import styles from './ItemComponent.module.scss'
+// import styles from './ItemComponent.module.scss'
 
 type Props = {
     item: Item
@@ -10,9 +10,9 @@ const ItemComponent = ({ item }: Props) => {
         const array = [];
         for (let index = 0; index < 9; index++) {
             if (index < knowledge) {
-                array.push(<div key={index} className={`${styles.knowledgeSpace} ${styles.acquired}`}></div>)
+                array.push(<div key={index} className={"w-2 h-2 rounded-full bg-blue-600"}></div>)
             } else {
-                array.push(<div key={index} className={styles.knowledgeSpace}></div>)
+                array.push(<div key={index} className="w-2 h-2 rounded-full bg-gray-300"></div>)
             }
         }
         return array;
@@ -44,20 +44,26 @@ const ItemComponent = ({ item }: Props) => {
     }
 
     return (
-        <div className={styles.itemContainer}>
-            <h4>{item.name}</h4>
-            {item.logoName ? <i className={`${item.logoName} ${styles.logo}`}></i> : <img src={item.urlImg} alt={`${item.name} logo`} className={styles.logo} />}
-            <label>{defineKnowledgeLabel(item.knowledge)}</label>
-            <div className={styles.knowledgeSpaces}>
-                {showKnowledgeSpace(item.knowledge)}
-            </div>
-            <div className={styles.ranks}>
-                <p>Jr</p>
-                <p>Pl</p>
-                <p>Sr</p>
+        <div className="flex w-60 h-46 flex-col items-center gap-2 border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition">
+            <h4 className="font-semibold text-gray-800">{item.name}</h4>
+            {item.logoName ? (
+                <i className={`${item.logoName} text-5xl text-black`} />
+            ) : (
+                <img
+                    src={item.urlImg}
+                    alt={`${item.name} logo`}
+                    className="w-12 h-12 invert"
+                />
+            )}
+            <span className="text-sm text-gray-500">{defineKnowledgeLabel(item.knowledge)}</span>
+            <div className="flex justify-center gap-1">{showKnowledgeSpace(item.knowledge)}</div>
+            <div className="flex text-xs gap-6.5 text-gray-400">
+                <span>Jr</span>
+                <span>Pl</span>
+                <span>Sr</span>
             </div>
         </div>
-    )
+    );
 }
 
 export default ItemComponent

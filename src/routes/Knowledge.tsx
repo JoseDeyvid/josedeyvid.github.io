@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import styles from './Knowledge.module.scss'
+// import styles from './Knowledge.module.scss'
 import type { Item } from '../utils/types';
 import ItemComponent from '../components/ItemComponent';
 import SearchBar from '../components/SearchBar';
@@ -27,7 +27,7 @@ const Knowledge = () => {
         { id: uuidv4(), knowledge: 6, name: "HTML5", logoName: "devicon-html5-plain" },
         { id: uuidv4(), knowledge: 7, name: "Javascript", logoName: "devicon-javascript-plain" },
         { id: uuidv4(), knowledge: 3, name: "Jest", logoName: "devicon-jest-plain" },
-        { id: uuidv4(), knowledge: 2, name: "React Testing Library", urlImg: "testing-library-e7d4d4.svg" },
+        { id: uuidv4(), knowledge: 2, name: "React Testing Library", urlImg: "testing-library-white.svg" },
         { id: uuidv4(), knowledge: 7, name: "JSON", logoName: "devicon-json-plain" },
         { id: uuidv4(), knowledge: 3, name: "Kubernetes", logoName: "devicon-kubernetes-plain" },
         { id: uuidv4(), knowledge: 2, name: "Materialize", logoName: "devicon-materializecss-plain" },
@@ -54,27 +54,33 @@ const Knowledge = () => {
     ])
     const [searchTxt, setSearchTxt] = useState('');
     const filteredItems = items.filter(item => item.name.toLocaleLowerCase().includes(searchTxt.toLowerCase()))
+
     return (
-        <div className={styles.container}>
-            <div className={styles.topFilters}>
+        <main className="max-w-7xl mx-auto px-6 py-6">
+            <div className="flex md:flex-row md:items-center md:justify-between gap-4 mb-6">
                 <SearchBar searchTxt={searchTxt} setSearchTxt={setSearchTxt} />
                 <OrderBy setItems={setItems} />
             </div>
-            <div className={styles.mainContent}>
+
+            <div className="flex gap-6">
                 <Sidebar />
-                <div className={styles.itemsContainer}>
-                    {filteredItems.length ? filteredItems.map((item) => (
-                        <ItemComponent key={item.id} item={item} />
-                    )) :
-                        <div className={styles.noFoundItems}>
-                            <h3>Não há itens correspondentes a sua busca</h3>
-                            <p>Reveja sua barra de pesquisa ou os filtros selecionados...</p>
+                <section className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    {filteredItems.length ? (
+                        filteredItems.map((item) => (
+                            <ItemComponent key={item.id} item={item} />
+                        ))
+                    ) : (
+                        <div className="flex flex-col justify-center items-center col-span-full text-center min-h-[300px] text-gray-700">
+                            <h3 className="text-lg font-semibold">
+                                Nenhum item corresponde à sua busca.
+                            </h3>
+                            <p>Reveja sua busca ou ajuste os filtros.</p>
                         </div>
-                    }
-                </div>
+                    )}
+                </section>
             </div>
-        </div>
-    )
+        </main>
+    );
 }
 
 export default Knowledge

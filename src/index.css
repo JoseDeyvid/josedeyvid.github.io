@@ -1,15 +1,6 @@
-:root {
-  --blue-color:   #3293cf;
-  --white-color: #e7d4d4;
-}
+@import "tailwindcss";
+
 
 body {
-  background-color: var(--blue-color);
-  color: var(--white-color);
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+  background-color: #3293cf;
 }
